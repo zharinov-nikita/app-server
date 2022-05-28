@@ -7,6 +7,7 @@ const router = new Router()
 
 
 // project
+router.get('/business', ProjectController.getAll)
 router.post('/business', ProjectController.create)
 router.patch('/business', ProjectController.update)
 router.patch('/business/seo', SeoController.update)

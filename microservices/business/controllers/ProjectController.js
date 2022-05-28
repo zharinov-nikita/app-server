@@ -14,6 +14,16 @@ class ProjectController {
         }
     }
 
+    async getAll(req, res) {
+        try {
+            const project = await ProjectModel.find()
+            return res.status(200).json(project)
+        } catch (e) {
+            return res.status(500).json(e)
+        }
+    }
+
+
     async update(req, res) {
         try {
             const { _id } = req.body
@@ -23,6 +33,8 @@ class ProjectController {
             return res.status(500).json(e)
         }
     }
+
+
 }
 
 export default new ProjectController()
