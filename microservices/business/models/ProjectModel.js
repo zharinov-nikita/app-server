@@ -1,6 +1,11 @@
 import mongoose from "mongoose"
 
 const Project = mongoose.Schema({
+    title: {
+        type: String,
+        require: true,
+        default: 'title',
+    },
     offer: {
         type: String,
         require: true,
@@ -17,7 +22,7 @@ const Project = mongoose.Schema({
         default: '22.02.02',
     },
     seo: { type: mongoose.Schema.Types.ObjectId, ref: 'Seo' },
-    domain: { type: mongoose.Schema.Types.ObjectId, ref: 'Domain' },
+    domain: { type: mongoose.Schema.Types.ObjectId, ref: 'Domain' }
 })
 
 export default mongoose.model('Project', Project)

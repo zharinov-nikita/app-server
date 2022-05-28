@@ -5,8 +5,8 @@ import DomainModel from '../models/DomainModel.js'
 class ProjectController {
     async create(req, res) {
         try {
+            const domain = await DomainModel.create({ domain: Date.now() })
             const seo = await SeoModel.create({})
-            const domain = await DomainModel.create({})
             const project = await ProjectModel.create({ seo, domain })
             return res.status(200).json(project)
         } catch (e) {
