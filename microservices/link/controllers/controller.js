@@ -1,6 +1,6 @@
 import Link from '../models/model.js'
 
-class LinkModel {
+class LinkController {
     async createLink(req, res) {
         try {
             const { offer, model, title, description, url, short } = req.body
@@ -72,4 +72,4 @@ class LinkModel {
     }
 }
 
-export default new LinkModel()
+export default new LinkController()
