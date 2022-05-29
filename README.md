@@ -2,12 +2,12 @@
 
 __Link__ - микросервис для взаимодействия с партнерскими ссылками. Через микросервис link можно выполнять следующие операции:
 
-1. Создание ссылки | POST | `host/microservice/link`
-2. Обновление ссылки | PATCH | `host/microservice/link` 
-3. Удаление ссылки | DELETE | `host/microservice/link/:_id`
+1. Создание ссылки | `POST` | `host/microservice/link`
+2. Обновление ссылки | `PATCH` | `host/microservice/link` 
+3. Удаление ссылки | `DELETE` | `host/microservice/link/:_id`
 4. Редирект ссылки с короткого url на оригинальный url `host/cc` 
-5. Получение всех ссылок | GET | `host/microservice/link`
-6. Получение одной ссылки | GET | `host/microservice/link/:_id`
+5. Получение всех ссылок | `GET` | `host/microservice/link`
+6. Получение одной ссылки | `GET` | `host/microservice/link/:_id`
 
 ## Коллекция данных
 
