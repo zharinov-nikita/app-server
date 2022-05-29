@@ -33,9 +33,6 @@ app.use('/microservice', linkRouter)
 
 
 
-
-
-
 // start app and connect mongodb => подлючение к базе данных + запуск приложения
 async function start() {
     try {
