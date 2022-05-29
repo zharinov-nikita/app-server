@@ -11,6 +11,10 @@ import mongoose from "mongoose"
 
 // import routes => импортируем router при создании нового микросервиса
 import linkRouter from "./microservices/link/routes/router.js"
+<<<<<<< HEAD
+=======
+import seoRouter from "./microservices/seo/routes/router.js"
+>>>>>>> seo
 // import routes => импортируем router при создании нового микросервиса
 
 
@@ -29,6 +33,10 @@ const PORT = process.env.PORT || 3030
 
 // routes => регистрируем роутер при создании нового микросервиса
 app.use('/microservice', linkRouter)
+<<<<<<< HEAD
+=======
+app.use('/microservice', seoRouter)
+>>>>>>> seo
 // routes => регистрируем роутер при создании нового микросервиса
 
 
