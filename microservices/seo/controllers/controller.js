@@ -37,6 +37,14 @@ class SeoController {
             return res.status(500).json({ message: 'error' })
         }
     }
+    async getAll(req, res) {
+        try {
+            const seo = await Seo.find()
+            return res.status(200).json(seo)
+        } catch (e) {
+            return res.status(500).json({ message: 'error' })
+        }
+    }
 }
 
 export default new SeoController()
