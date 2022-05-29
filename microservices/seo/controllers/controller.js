@@ -10,6 +10,15 @@ class SeoController {
             return res.status(500).json({ message: 'error' })
         }
     }
+    async update(req, res) {
+        try {
+            const { _id } = req.body
+            const seo = await Seo.findByIdAndUpdate(_id, req.body, { new: true })
+            return res.status(200).json(seo)
+        } catch (e) {
+            return res.status(500).json({ message: 'error' })
+        }
+    }
 }
 
 export default new SeoController()
