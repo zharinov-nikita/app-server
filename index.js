@@ -30,7 +30,7 @@ const PORT = process.env.PORT || 3030
 
 // routes => регистрируем роутер при создании нового микросервиса
 app.use('/microservice', linkRouter)
-app.use('/microservice/business', seoRouter)
+app.use('/microservice', seoRouter)
 // routes => регистрируем роутер при создании нового микросервиса
 
 
