@@ -14,5 +14,8 @@ router.patch('/business/seo', SeoController.update)
 router.patch('/business/domain', DomainController.update)
 // project
 
+// seo
+router.get('/business/seo/:_id', SeoController.getOne)
+// seo
 
 export default router
