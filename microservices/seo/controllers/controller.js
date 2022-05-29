@@ -19,6 +19,24 @@ class SeoController {
             return res.status(500).json({ message: 'error' })
         }
     }
+    async delete(req, res) {
+        try {
+            const { _id } = req.params
+            const seo = await Seo.findByIdAndDelete({ _id })
+            return res.status(200).json(seo)
+        } catch (e) {
+            return res.status(500).json({ message: 'error' })
+        }
+    }
+    async getOne(req, res) {
+        try {
+            const { _id } = req.params
+            const seo = await Seo.findById({ _id })
+            return res.status(200).json(seo)
+        } catch (e) {
+            return res.status(500).json({ message: 'error' })
+        }
+    }
 }
 
 export default new SeoController()
