@@ -1,10 +1,10 @@
 import Link from '../models/model.js'
+import LinkService from '../services/service.js'
 
 class LinkController {
     async createLink(req, res) {
         try {
-            const { offer, model, title, description, url, short } = req.body
-            const link = await Link.create({ offer, model, title, description, url, short })
+            const link = await LinkService.create(req.body)
             return res.status(200).json(link)
         } catch (e) {
             return res.status(500).json({ message: "Некорректные данные" })
