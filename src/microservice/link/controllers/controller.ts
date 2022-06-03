@@ -1,14 +1,14 @@
 import { Request, Response } from 'express'
-import { ILink } from '../models/interfaces/model'
 import Service from '../services/service'
 import Message from '../messages/message'
+import { ILink } from '../models/interfaces/model'
 
 
 class Controller {
     async create(req: Request, res: Response) {
         try {
-            const data: ILink = req.body
-            const link = await Service.create(data)
+            const { offer, model, title, description, url, short }: ILink = req.body
+            const link = await Service.create({ offer, model, title, description, url, short })
             return res.status(200).json(link)
         } catch (e) {
             const error = Message.show('error', 'error')
@@ -50,8 +50,8 @@ class Controller {
 
     async update(req: Request, res: Response) {
         try {
-            const data: ILink = req.body
-            const link = await Service.update(data)
+            const { _id, offer, model, title, description, url, short }: ILink = req.body
+            const link = await Service.update({ _id, offer, model, title, description, url, short })
             return res.status(200).json(link)
         } catch (e) {
             const error = Message.show('error', 'error')

@@ -18,8 +18,8 @@ class Controller {
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const data = req.body;
-                const link = yield service_1.default.create(data);
+                const { offer, model, title, description, url, short } = req.body;
+                const link = yield service_1.default.create({ offer, model, title, description, url, short });
                 return res.status(200).json(link);
             }
             catch (e) {
@@ -69,8 +69,8 @@ class Controller {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const data = req.body;
-                const link = yield service_1.default.update(data);
+                const { _id, offer, model, title, description, url, short } = req.body;
+                const link = yield service_1.default.update({ _id, offer, model, title, description, url, short });
                 return res.status(200).json(link);
             }
             catch (e) {

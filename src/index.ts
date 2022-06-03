@@ -35,7 +35,7 @@ app.use('/microservice', link)
 // start app and connect mongodb => подлючение к базе данных + запуск приложения
 async function start() {
     try {
-        await mongoose.connect('mongodb://localhost:27017/typescript')
+        await mongoose.connect('mongodb://localhost:27017/dev')
         app.listen(PORT, () => console.log(`The server started on the port ${PORT}`))
     } catch (e) {
         console.log(e)

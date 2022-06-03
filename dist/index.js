@@ -33,7 +33,7 @@ app.use('/microservice', router_1.default);
 function start() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield mongoose_1.default.connect('mongodb://localhost:27017/typescript');
+            yield mongoose_1.default.connect('mongodb://localhost:27017/dev');
             app.listen(PORT, () => console.log(`The server started on the port ${PORT}`));
         }
         catch (e) {
