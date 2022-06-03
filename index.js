@@ -2,7 +2,6 @@
 import express from "express"
 import cors from "cors"
 import mongoose from "mongoose"
-
 // importing dependencies
 
 
@@ -11,7 +10,6 @@ import mongoose from "mongoose"
 
 // import routes => импортируем router при создании нового микросервиса
 import linkRouter from "./microservices/link/routes/router.js"
-import seoRouter from "./microservices/seo/routes/router.js"
 // import routes => импортируем router при создании нового микросервиса
 
 
@@ -30,7 +28,6 @@ const PORT = process.env.PORT || 3030
 
 // routes => регистрируем роутер при создании нового микросервиса
 app.use('/microservice', linkRouter)
-app.use('/microservice', seoRouter)
 // routes => регистрируем роутер при создании нового микросервиса
 
 
