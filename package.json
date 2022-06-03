@@ -1,22 +1,26 @@
 {
-  "name": "service",
+  "name": "ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
-  "proxy": "http://localhost:3030",
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js"
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "server": "nodemon dist/index.js"
   },
-  "author": "Zharinov Nikita",
+  "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^17.0.38",
+    "nodemon": "^2.0.16",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.2"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "mongoose": "^6.3.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.16"
+    "mongoose": "^6.3.5"
   }
 }

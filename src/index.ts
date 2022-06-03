@@ -9,7 +9,7 @@ import mongoose from "mongoose"
 
 
 // import routes => импортируем router при создании нового микросервиса
-import linkRouter from "./microservices/link/routes/router.js"
+import link from "./microservice/link/router/router"
 // import routes => импортируем router при создании нового микросервиса
 
 
@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 3030
 
 
 // routes => регистрируем роутер при создании нового микросервиса
-app.use('/microservice', linkRouter)
+app.use('/microservice', link)
 // routes => регистрируем роутер при создании нового микросервиса
 
 
@@ -35,7 +35,7 @@ app.use('/microservice', linkRouter)
 // start app and connect mongodb => подлючение к базе данных + запуск приложения
 async function start() {
     try {
-        await mongoose.connect('mongodb://localhost:27017/dev')
+        await mongoose.connect('mongodb://localhost:27017/typescript')
         app.listen(PORT, () => console.log(`The server started on the port ${PORT}`))
     } catch (e) {
         console.log(e)
@@ -43,4 +43,3 @@ async function start() {
 }
 start()
 // start app and connect mongodb => подлючение к базе данных + запуск приложения
-
