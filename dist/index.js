@@ -19,6 +19,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 // importing dependencies
 // import routes => импортируем router при создании нового микросервиса
 const router_1 = __importDefault(require("./microservice/link/router/router"));
+const router_2 = __importDefault(require("./microservice/project/router/router"));
 // import routes => импортируем router при создании нового микросервиса
 // express app setting 
 const app = (0, express_1.default)();
@@ -28,6 +29,7 @@ const PORT = process.env.PORT || 3030;
 // express app setting
 // routes => регистрируем роутер при создании нового микросервиса
 app.use('/microservice', router_1.default);
+app.use('/microservice', router_2.default);
 // routes => регистрируем роутер при создании нового микросервиса
 // start app and connect mongodb => подлючение к базе данных + запуск приложения
 function start() {
