@@ -6,6 +6,13 @@ class Service {
         return await Model.create(project)
     }
 
+    async delete(_id: string) {
+        if (_id) {
+            return await Model.findByIdAndDelete({ _id })
+        }
+        throw new Error()
+    }
+
 
     async update(project: IProject) {
         if (project?._id) {

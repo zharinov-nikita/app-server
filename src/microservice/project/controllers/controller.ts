@@ -8,7 +8,19 @@ class Controller {
     async create(req: Request, res: Response) {
         try {
             const { title, offer, status }: IProject = req.body
-            const project: IProject = await Service.create({ title, offer, status })
+            const project = await Service.create({ title, offer, status })
+            return res.status(200).json(project)
+        } catch (e) {
+            const error = Message.show('error', 'error')
+            return res.status(500).json(error)
+        }
+    }
+
+
+    async delete(req: Request, res: Response) {
+        try {
+            const { _id } = req.params
+            const project = await Service.delete(_id)
             return res.status(200).json(project)
         } catch (e) {
             const error = Message.show('error', 'error')
@@ -20,7 +32,7 @@ class Controller {
     async update(req: Request, res: Response) {
         try {
             const { _id, title, offer, status }: IProject = req.body
-            const project: IProject = await Service.update({ _id, title, offer, status })
+            const project = await Service.update({ _id, title, offer, status })
             return res.status(200).json(project)
         } catch (e) {
             const error = Message.show('error', 'error')

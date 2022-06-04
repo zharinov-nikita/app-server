@@ -19,6 +19,14 @@ class Service {
             return yield model_1.default.create(project);
         });
     }
+    delete(_id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (_id) {
+                return yield model_1.default.findByIdAndDelete({ _id });
+            }
+            throw new Error();
+        });
+    }
     update(project) {
         return __awaiter(this, void 0, void 0, function* () {
             if (project === null || project === void 0 ? void 0 : project._id) {
