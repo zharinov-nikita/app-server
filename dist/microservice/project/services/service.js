@@ -27,6 +27,19 @@ class Service {
             throw new Error();
         });
     }
+    read(_id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (_id) {
+                return yield model_1.default.findById({ _id });
+            }
+            throw new Error();
+        });
+    }
+    readAll() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield model_1.default.find();
+        });
+    }
     update(project) {
         return __awaiter(this, void 0, void 0, function* () {
             if (project === null || project === void 0 ? void 0 : project._id) {

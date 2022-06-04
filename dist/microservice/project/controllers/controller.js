@@ -41,6 +41,31 @@ class Controller {
             }
         });
     }
+    read(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const { _id } = req.params;
+                const project = yield service_1.default.read(_id);
+                return res.status(200).json(project);
+            }
+            catch (e) {
+                const error = message_1.default.show('error', 'error');
+                return res.status(500).json(error);
+            }
+        });
+    }
+    readAll(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const project = yield service_1.default.readAll();
+                return res.status(200).json(project);
+            }
+            catch (e) {
+                const error = message_1.default.show('error', 'error');
+                return res.status(500).json(error);
+            }
+        });
+    }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

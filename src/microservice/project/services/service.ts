@@ -13,6 +13,17 @@ class Service {
         throw new Error()
     }
 
+    async read(_id: string) {
+        if (_id) {
+            return await Model.findById({ _id })
+        }
+        throw new Error()
+    }
+
+    async readAll() {
+        return await Model.find()
+    }
+
 
     async update(project: IProject) {
         if (project?._id) {
