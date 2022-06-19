@@ -5,7 +5,7 @@ import { UpdateLinkDto } from './dto/update-link.dto'
 import { Link } from './link.schema'
 import { LinkService } from './link.service'
 
-@Controller('link')
+@Controller('api/link')
 export class LinkController {
     constructor(private linkService: LinkService) { }
 
