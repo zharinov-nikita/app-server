@@ -1,8 +1,11 @@
 export class CreateOfferDto {
-    readonly offer: string
+    readonly name: string
     readonly model: string
-    readonly title: string
-    readonly description: string
+    readonly type: string
+    readonly pay: {
+        readonly value: number
+        readonly currency: string
+    }
     readonly url: string
     readonly short: string
 }

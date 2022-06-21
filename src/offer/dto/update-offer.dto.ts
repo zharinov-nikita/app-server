@@ -1,8 +1,11 @@
 export class UpdateOfferDto {
-    readonly offer: string
+    readonly name: string
     readonly model: string
-    readonly title: string
-    readonly description: string
+    readonly type: string
+    readonly pay: {
+        value: number
+        currency: string
+    }
     readonly url: string
     readonly short: string
 }

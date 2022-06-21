@@ -14,8 +14,8 @@ export class Offer {
     @Prop({ type: String, required: true })
     model: string
 
-    @Prop({ type: String, required: true })
-    pay: string
+    @Prop({ type: Object, required: true })
+    pay: object
 
     @Prop({ type: String, required: true })
     url: string
