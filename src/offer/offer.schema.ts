@@ -1,21 +1,21 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 
-export type LinkDocument = Link & Document
+export type OfferDocument = Offer & Document
 
 @Schema()
-export class Link {
+export class Offer {
     @Prop({ type: String, required: true })
-    offer: string
+    name: string
+
+    @Prop({ type: String, required: true })
+    type: string
 
     @Prop({ type: String, required: true })
     model: string
 
     @Prop({ type: String, required: true })
-    title: string
-
-    @Prop({ type: String, required: true })
-    description: string
+    pay: string
 
     @Prop({ type: String, required: true })
     url: string
@@ -24,4 +24,4 @@ export class Link {
     short: string
 }
 
-export const LinkSchema = SchemaFactory.createForClass(Link)
+export const OfferSchema = SchemaFactory.createForClass(Offer)

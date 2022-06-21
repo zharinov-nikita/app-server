@@ -1,4 +1,4 @@
-export class UpdateLinkDto {
+export class CreateOfferDto {
     readonly offer: string
     readonly model: string
     readonly title: string
